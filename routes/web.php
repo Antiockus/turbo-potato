@@ -11,12 +11,14 @@
 |
 */
 
-Route::get('/', 'standardPageController@index');
+Route::get('/', 'standardPageController@index')->name('index');
 
-Route::get('/about', 'standardPageController@about');
+Route::get('/about', 'standardPageController@about')->name('about');
 
-Route::get('/contact', 'standardPageController@contact');
+Route::get('/contact', 'standardPageController@contact')->name('contact');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('tickets', 'TicketController');
